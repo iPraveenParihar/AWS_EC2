@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<link href="{{ url_for('static', filename='../static/css/bootstrap.css') }}" rel="stylesheet">
+	<body>
+		{% include "navbar.html" %}
+		<div class="container mt-5">
+			<h2 class="text-primary">Tensorflow pre-trained models</h2>
+			<div class="row mt-5">
+				<div class="col-lg-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">SMS Spam filter</h5>
+							<h6 class="card-subtitle mb-2 text-muted">tensorflow model</h6>
+							<p class="card-text">Accuracy: 0.95</p>
+							<form method="POST">
+								<input type="hidden" name="model_name" value="sms_spam">
+								<input type="submit" value="View Architecture" name="action" class="card-link btn text-primary">
+								<input type="submit" value="Playground" name="action" class="card-link btn text-primary">
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

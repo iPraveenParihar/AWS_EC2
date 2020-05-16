@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<link href="{{ url_for('static', filename='../static/css/bootstrap.css') }}" rel="stylesheet">
+	<body>
+		{% include "navbar.html" %}
+		<div class="container mt-5">
+			<h2 class="text-primary">SMS Spam filter pre-trained models</h2>
+			<form class="mt-5" method="POST">
+				<div class="form-group">
+					<label for="exampleFormControlTextarea1">Enter sms to classify</label>
+					<textarea class="form-control" rows="3" name='sms_input_data'></textarea>
+				</div>
+				<input class="btn btn-primary" type="submit" value="Classify" name="classify_btn">
+			</form>
+
+			{% if prediction != None %}
+			<div class="prediction-result mt-4 border text-center">
+				<h3 class="text-dark">{{ data }}</h3>
+				{% if prediction == True %}
+				<h3 class="text-danger p-4">Spam</h3>
+				{% elif prediction == False %}
+				<h3 class="text-success p-4">Not Spam</h3>
+				{% endif %}
+			</div>
+			{% endif %}
+		</div>
+	</body>
+</html>
