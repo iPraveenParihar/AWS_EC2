@@ -7,8 +7,6 @@ import pickle
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-
-
 def predict(data):
 	model = tf.keras.models.load_model('model/sms_spam_model.h5')
 

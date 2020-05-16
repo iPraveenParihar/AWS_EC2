@@ -12,7 +12,7 @@ def index():
 	return "Index Page"
 
 @app.route('/predict', methods=['GET','POST'])
-def predict():
+def get_predict():
 	data = request.form.get('data')
 	if data == None:
 		return 'Got None'
@@ -21,5 +21,6 @@ def predict():
 
 	return json.dumps(str(prediction))
 
+
 if __name__ == "__main__":
-	app.run()
+	app.run(host='127.0.0.1', debug=True)
